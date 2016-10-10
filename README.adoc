@@ -1,0 +1,5 @@
+= SPRING CLOUD STREAM SIMPLE POC
+
+This project is a proof of concept in which to try connecting a simple Spring Cloud Stream project with a RabbitMQ.
+
+
