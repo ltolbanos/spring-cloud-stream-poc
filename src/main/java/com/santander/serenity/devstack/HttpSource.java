@@ -22,6 +22,6 @@ public class HttpSource {
 
     @RequestMapping(path = "/messages", method = RequestMethod.POST)
     public void sayHello(@RequestBody String name){
-        output.send(MessageBuilder.withPayload("Hello " + name).build());
+        output.send(MessageBuilder.withPayload("Luke, " + name).build());
     }
 }

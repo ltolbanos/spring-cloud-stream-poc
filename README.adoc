@@ -2,4 +2,21 @@
 
 This project is a proof of concept in which to try connecting a simple Spring Cloud Stream project with a RabbitMQ.
 
+== Run it!
 
+The app is a Spring Boot Application, so you only need to press the run button on your favourite IDE:
+
+IntelliJ IDEA: right click on the SpringCloudStreamPocApplication.java file and "Run".
+Eclipse: right click on the SpringCloudStreamPocApplication.java, then "Run As" -> "Maven Build...". And in the goals enter: "spring-boot:run".
+
+== Try it!
+
+You will need a RabbitMQ running. If you are running locally the RabbitMQ you don't need the property: 'spring.rabbitmq.host'.
+
+NOTE: If you are using Docker with a RabbitMQ image, you have to set the value of your Docker machine IP in the property 'spring.rabbitmq.host'
+
+Then you can send a REST message via POST, for example:
+
+* curl -X POST -H "Content-Type: text/plain" -d "I'm your father" localhost:9000/messages
+
+Also, you can set another name for the RabbitMQ exchange with the property 'spring.cloud.stream.bindings.input.destination'. Remember if the topic exchange doesn't exist before you run your app, in the moment you run it, the topic exchange will be created.
